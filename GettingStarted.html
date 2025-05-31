@@ -2,13 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body> 
     <!-- shortcut: (.) -> class, (#) -> id -->
     <div id="shopping-list">
-        <h1>{{header}}</h1>
-        <input v-model="header">
+        <h1>{{header || 'Welcome'}}</h1>
     </div>
 
     <script src="https://unpkg.com/vue@3.5.15/dist/vue.global.js"></script>
@@ -17,7 +17,7 @@
         const shoppingList = Vue.createApp({
             data() {
                 return {
-                    header: "Vue is ready!"
+                    header: "Shopping List App"
                 }
             }
         })
