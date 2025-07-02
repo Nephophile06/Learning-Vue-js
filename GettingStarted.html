@@ -11,14 +11,10 @@
         <h1>{{header || 'Welcome'}}</h1>
         <input v-model="newItem" type="text" placeholder="Add an item">
         <label>
-            Priority
-            <select v-model="newItemPriority">
-                <option value="low">Low</option>
-                <option value="high">High</option>
-            </select>
+            <input type="checkbox" v-model="newItemHighPriority"> High Priority
         </label>
         <br>
-        {{newItem}} {{newItemPriority}}
+        {{newItem}} {{newItemHighPriority}}
         <ul>
             <li v-for="(item, key) in items" :key="item.id">{{key}} {{item.label}}</li>
         </ul>
@@ -32,7 +28,7 @@
                 return {
                     header: "Shopping List App",
                     newItem: '',
-                    newItemPriority: 'low',
+                    newItemHighPriority: 'false',
                     items: {
                         'item-1': {id: 1, label: "10 party hats"},
                         'item-2': {id: 2, label: "2 board games"},
