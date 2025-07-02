@@ -15,6 +15,14 @@
         </label>
         <br>
         {{newItem}} {{newItemHighPriority}}
+
+        <label ><input type="checkbox" v-model="iceCreamFlavors" 
+        value="vanilla">Vanilla</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" 
+        value="cookies and cream">Cookies and Cream</label>
+        
         <ul>
             <li v-for="(item, key) in items" :key="item.id">{{key}} {{item.label}}</li>
         </ul>
@@ -29,6 +37,7 @@
                     header: "Shopping List App",
                     newItem: '',
                     newItemHighPriority: 'false',
+                    iceCreamFlavors: [],
                     items: {
                         'item-1': {id: 1, label: "10 party hats"},
                         'item-2': {id: 2, label: "2 board games"},
